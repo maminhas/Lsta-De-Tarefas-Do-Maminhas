@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista De Tarefas Do Maminhas</title>
+    </head>
+    <body>
+        <h1>Tarefas ELITI</h1>
+        <ul></ul>
+          <input>
+          <button onclick="add()">enviar</button>
+          <script>
+            // estado da aplicação
+            const tarefas = ['Estudar HTML','Estudar CSS','Estudar JS']
+
+            // alteradores de estado da aplicação
+            function add() {
+                const input = document.querySelector("input")
+                const tarefa = input.value
+                tarefas.push(tarefa)
+                input.value = ""
+                render()
+            }
+
+            //mostrar na tela
+            function render() {
+                const ul = document.querySelector("ul")
+                ul.innerHTML = null
+
+                tarefas.forEach(function (tarefa) {
+                const li = document.createElement("li")
+                li.innerText = tarefa
+                ul.appendChild(li)
+                })
+            }
+                
+            //iniciar
+            render()
+          </script>
+    </body>
+</html>
