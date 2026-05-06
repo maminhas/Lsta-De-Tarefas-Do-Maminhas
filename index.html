@@ -4,37 +4,37 @@
         <title>Lista De Tarefas Do Maminhas</title>
     </head>
     <body>
-        <h1>Tarefas ELITI</h1>
-        <ul></ul>
-          <input>
-          <button onclick="add()">enviar</button>
-          <script>
-            // estado da aplicação
-            const tarefas = ['Estudar HTML','Estudar CSS','Estudar JS']
 
-            // alteradores de estado da aplicação
-            function add() {
-                const input = document.querySelector("input")
-                const tarefa = input.value
-                tarefas.push(tarefa)
-                input.value = ""
-                render()
-            }
+    <h1>Lista De Tarefas</h1>
+    <ul></ul>
+    <input>
+    <button onclick="add()">enviar</button>
 
-            //mostrar na tela
-            function render() {
-                const ul = document.querySelector("ul")
-                ul.innerHTML = null
+    <script>
 
-                tarefas.forEach(function (tarefa) {
+        const tarefas = ['Estudar HTML','Estudar CSS','Estudar JS']
+
+        function add() {
+            const input = document.querySelector("input")
+            const tarefa = input.value
+            tarefas.push(tarefa)
+            input.value = ""
+            render()
+        }
+
+        function render() {
+            const ul = document.querySelector("ul")
+            ul.innerHTML = ""
+
+            tarefas.forEach(function (tarefa) {
                 const li = document.createElement("li")
                 li.innerText = tarefa
                 ul.appendChild(li)
-                })
-            }
-                
-            //iniciar
-            render()
-          </script>
-    </body>
+            })
+        }
+
+        render()
+
+    </script>
+</body>
 </html>
