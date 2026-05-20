@@ -6,35 +6,29 @@
     <body>
 
     <h1>Lista De Tarefas</h1>
-    <ul></ul>
+    <ul>
+        <li>Estudar HTML</li>
+        <li>Estudar CSS</li>
+        <li>Estudar JS</li>
+    </ul>
     <input>
     <button onclick="add()">enviar</button>
 
     <script>
 
-        const tarefas = ['Estudar HTML','Estudar CSS','Estudar JS']
-
         function add() {
+            const ul = document.querySelector("ul")
             const input = document.querySelector("input")
             const tarefa = input.value
-            tarefas.push(tarefa)
+            
+            const li = document.createElement("li")
+            li.innerText = tarefa
+            ul.appendChild(li)
+
             input.value = ""
-            render()
         }
-
-        function render() {
-            const ul = document.querySelector("ul")
-            ul.innerHTML = ""
-
-            tarefas.forEach(function (tarefa) {
-                const li = document.createElement("li")
-                li.innerText = tarefa
-                ul.appendChild(li)
-            })
-        }
-
-        render()
 
     </script>
-</body>
+    
+    </body>
 </html>
