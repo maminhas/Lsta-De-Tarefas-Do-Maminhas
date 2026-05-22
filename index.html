@@ -2,9 +2,30 @@
 <html>
     <head>
         <title>Lista De Tarefas Do Maminhas</title>
+        <style>
+
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: url(img/754787.png);
+                display: grid;
+                place-items: center;
+                gap: 10px;
+                color: white;
+            }
+            section {
+                background-color: #666;
+                padding: 20px;
+                border-radius: 30px;
+            }
+
+        </style>
     </head>
     <body>
 
+    <section>
     <h1>Lista De Tarefas</h1>
     <ul>
         <li>Estudar HTML</li>
@@ -13,19 +34,20 @@
     </ul>
     <input>
     <button onclick="add()">enviar</button>
+    </section>
 
     <script>
 
         function add() {
-            const ul = document.querySelector("ul")
-            const input = document.querySelector("input")
-            const tarefa = input.value
-            
-            const li = document.createElement("li")
-            li.innerText = tarefa
-            ul.appendChild(li)
+       const ul = document.querySelector("ul")
+       const input = document.querySelector("input")
+       const tarefa = input.value
 
-            input.value = ""
+       const li = document.createElement("li")
+       li.innerText = tarefa
+       ul.appendChild(li)
+
+       input.value = ""
         }
 
     </script>
